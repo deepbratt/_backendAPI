@@ -11,7 +11,6 @@ const posts_schema = new mongoose.Schema ({
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    required: 'UserId is requierd',
     ref: 'Users',
   },
   postDate: {

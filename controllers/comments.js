@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Comments = mongoose.model("Comments");
 
 router.get("/:postId", async (req, res) => {
-  const comments = await Comments.find({_id: req.params.postId});
+  const comments = await Comments.find({ "postId" : req.params.postId });
   res.send(comments);
 });
 

@@ -13,6 +13,7 @@ router.post("/", async (req, res) => {
   newPosts.description = req.body.description;
   newPosts.userId = req.body.userId;
   newPosts.postDate = Date.now();
+  console.log(newPosts);
   await newPosts.save((err,response)=> {
     if(err){
       console.log(err);

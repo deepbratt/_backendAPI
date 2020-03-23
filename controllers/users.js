@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
   newUser.email = req.body.email;
   newUser.phone = req.body.phone;
   newUser.userPassword = req.body.userPassword;
-  newUser.userDate = req.body.registrationDate;
+  newUser.userDate = Date.now();
   await newUser.save((err,response)=> {
     if(err){
       console.log(err);

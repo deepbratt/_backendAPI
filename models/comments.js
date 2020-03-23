@@ -12,7 +12,6 @@ const comments_schema = new mongoose.Schema ({
   },
   postId: {
     type: mongoose.Schema.Types.ObjectId,
-    required: 'PostId is requierd',
     ref: 'Posts',
   },
   commentDate: {
