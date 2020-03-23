@@ -7,8 +7,8 @@ router.get("/", async (req, res) => {
   res.send(users);
 });
 
-router.get("/:userId", async (req, res) => {
-  const data = await Users.find({_id: req.params.userId});
+router.post("/getuser", async (req, res) => {
+  const data = await Users.findOne({_id: req.body.token});
   res.send(data);
 });
 
