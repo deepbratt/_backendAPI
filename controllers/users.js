@@ -13,15 +13,8 @@ router.get("/:userId", async (req, res) => {
 });
 
 router.post("/auth", async (req, res) => {
-  await Users.find({_id : req.body.userId}, function (err,user){
-  if(err){
-      return res.send(err);
-  }
-  if(!user){
-    return res.send('invalid');
-  }
-    return res.send(user);
-  })
+  const data = await Users.findOne({ email : req.body.email , userPassword : req.body.userPassword});
+  res.send(data);
 });
 
 router.post("/", async (req, res) => {
