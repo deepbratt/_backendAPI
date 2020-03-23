@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Posts = mongoose.model("Posts");
 
 router.get("/", async (req, res) => {
-  const posts = await Posts.find({});
+  const posts = await Posts.find({}).populate('userId');
   res.send(posts);
 });
 
